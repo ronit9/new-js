@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- 9. Write a JavaScript program to find max of 5 number using nested if -->
 
 <h1 id="max"></h1>
@@ -70,3 +71,77 @@
     }
   }
 </script>
+=======
+<!-- 9. Write a JavaScript program to find max of 5 number using nested if -->
+
+<h1 id="max"></h1>
+<script text="text/javascript">
+  var a = parseInt(prompt("enter first number"));
+  var b = parseInt(prompt("enter second number"));
+  var c = parseInt(prompt("enter third number"));
+  var d = parseInt(prompt("enter fourth number"));
+  var e = parseInt(prompt("enter fifth number"));
+
+  if (a > b) {
+    if (a > c) {
+      if (a > d) {
+        if (a > e) {
+          document.getElementById("max").innerHTML = `max number is ${a}`;
+        } else {
+          document.getElementById("max").innerHTML = `max number is ${e}`;
+        }
+      } else {
+        if (d > e) {
+          document.getElementById("max").innerHTML = `max number is ${d}`;
+        } else {
+          document.getElementById("max").innerHTML = `max number is ${e}`;
+        }
+      }
+    } else {
+      if (c > d) {
+        if (c > e) {
+          document.getElementById("max").innerHTML = `max number is ${c}`;
+        } else {
+          document.getElementById("max").innerHTML = `max number is ${e}`;
+        }
+      } else {
+        if (d > e) {
+          document.getElementById("max").innerHTML = `max number is ${d}`;
+        } else {
+          document.getElementById("max").innerHTML = `max number is ${e}`;
+        }
+      }
+    }
+  } else {
+    if (b > c) {
+      if (b > d) {
+        if (b > e) {
+          document.getElementById("max").innerHTML = `max number is ${b}`;
+        } else {
+          document.getElementById("max").innerHTML = `max number is ${e}`;
+        }
+      } else {
+        if (d > e) {
+          document.getElementById("max").innerHTML = `max number is ${d}`;
+        } else {
+          document.getElementById("max").innerHTML = `max number is ${e}`;
+        }
+      }
+    } else {
+      if (c > d) {
+        if (c > e) {
+          document.getElementById("max").innerHTML = `max number is ${c}`;
+        } else {
+          document.getElementById("max").innerHTML = `max number is ${e}`;
+        }
+      } else {
+        if (d > e) {
+          document.getElementById("max").innerHTML = `max number is ${d}`;
+        } else {
+          document.getElementById("max").innerHTML = `max number is ${e}`;
+        }
+      }
+    }
+  }
+</script>
+>>>>>>> 2df7efb13d6cb24cafffaf64f39c0c14cfbb6501
