@@ -1,0 +1,17 @@
+<!-- Write a JavaScript   program to input angles of a triangle and check whether triangle is valid or not -->
+
+<script type="text/javascript">
+  //TSRS
+
+  var a = parseInt(prompt(`enter num:-`));
+  var b = parseInt(prompt(`enter num:-`));
+  var c = parseInt(prompt(`enter num:-`));
+  const ang = (a, b, c) => {
+    if (a + b + c == 180) {
+      return `<h1>Triangle is valid</h1>`;
+    } else {
+      return `<h1>Triangle is not valid</h1>`;
+    }
+  };
+  document.write(ang(a, b, c));
+</script>

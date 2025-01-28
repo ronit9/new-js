@@ -1,0 +1,31 @@
+<script type="text/javascript">
+  //TSRN
+  var a = parseInt(prompt("Enter  number"));
+  var b = parseInt(prompt("Enter  number"));
+  const calc = (a, b) => {
+    var choice = prompt(`enter your choice +,-,*,/`);
+
+    switch (choice) {
+      case "+":
+        var sum = parseInt(a) + parseInt(b);
+        document.write(`<h1>${sum}</h1>`);
+        break;
+
+      case "-":
+        var sub = a - b;
+        document.write(`<h1>${sub}</h1>`);
+        break;
+
+      case "*":
+        var mul = a * b;
+        document.write(`<h1>${mul}</h1>`);
+        break;
+
+      case "/":
+        var div = a / b;
+        document.write(`<h1>${div}</h1>`);
+        break;
+    }
+  };
+  calc(a, b);
+</script>
