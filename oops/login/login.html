@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+  </head>
+  <body>
+    <div align="center">
+      <h1>login system</h1>
+      <form>
+        <label>name</label>
+        <input type="text" placeholder="your name" id="name" />
+        <br />
+        <br />
+        <label>account number</label>
+        <input type="text" placeholder="your accountnumber" id="accno" />
+        <br />
+        <br />
+        <label>email</label>
+        <input type="text" placeholder="email" id="email" />
+        <br />
+        <br />
+        <label>password</label>
+        <input type="password" placeholder="password" id="password" />
+        <br />
+        <br />
+        <button value="submit" onclick="logindata()">login</button>
+      </form>
+
+      <table border="1">
+        <thead>
+          <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>accountnumber</td>
+            <td>credit</td>
+            <td>debit</td>
+            <td>balance</td>
+          </tr>
+        </thead>
+        <tbody id="data"></tbody>
+      </table>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

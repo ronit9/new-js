@@ -1,0 +1,33 @@
+<script type="text/javascript">
+    //TSRS
+    var a = parseInt(prompt("Enter  number"));
+    var b = parseInt(prompt("Enter  number"));
+    const calc = (a, b) => {
+      var choice = prompt(`enter your choice +,-,*,/`);
+  
+      switch (choice) {
+        case "+":
+          var ans = parseInt(a) + parseInt(b);
+          document.write(`<h1>${ans}</h1>`);
+          break;
+  
+        case "-":
+          var ans = a - b;
+          document.write(`<h1>${ans}</h1>`);
+          break;
+  
+        case "*":
+          var ans = a * b;
+          document.write(`<h1>${ans}</h1>`);
+          break;
+  
+        case "/":
+          var ans = a / b;
+          document.write(`<h1>${ans}</h1>`);
+          break;
+      }
+      return ans;
+    };
+    calc(a, b);
+  </script>
+  

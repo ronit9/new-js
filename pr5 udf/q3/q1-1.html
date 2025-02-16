@@ -1,0 +1,23 @@
+<!-- Write a JavaScript program to find which number is greter in 4 numbers using ledder if else -->
+
+<script type="text/javascript">
+  //TNRN
+
+  const big = () => {
+    var a = parseInt(prompt(`enter num:-`));
+    var b = parseInt(prompt(`enter num:-`));
+    var c = parseInt(prompt(`enter num:-`));
+    var d = parseInt(prompt(`enter num:-`));
+
+    if (a > b && a > c && a > d) {
+      document.write(`<h1>${a} is big</h1>`);
+    } else if (b > a && b > c && b > d) {
+      document.write(`<h1>${b} is big</h1>`);
+    } else if (c > a && c > b && c > d) {
+      document.write(`<h1>${c} is big</h1>`);
+    } else {
+      document.write(`<h1>${d} is big</h1>`);
+    }
+  };
+  big();
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./filter.css" />
+    <title>Filter</title>
+  </head>
+  <body>
+    <div align="center">
+      <h1>filter app</h1>
+
+      <input type="text" id="city" placeholder="enter city">
+      <button value="submit" onclick="cityfind()">search</button>
+
+      <div class="salary">
+        <input type="text" id="minsalary" placeholder="minsalary">
+        <h5>to</h5>
+        <input type="text" id="maxsalary" placeholder="maxsalary">
+        <button value="submit" onclick="slarayfind()">salary</button>
+      </div>
+
+      <div class="hobby">
+        <input type="text" id="hobby" placeholder="enter hobby">
+        <button value="submit" onclick="hobbyfind()">hobby</button>
+      </div>
+     
+      <button onclick="reset()">reset</button>
+      <br />
+      <br />
+      <table border="1">
+        <thead>
+          <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>email</td>
+            <td>gender</td>
+            <td>hobby</td>
+            <td>city</td>
+            <td>salary</td>
+            <td>designation</td>
+          </tr>
+        </thead>
+        <tbody id="data"></tbody>
+      </table>
+      <h1 id="error"></h1>
+    </div>
+  </body>
+
+  <!-- <script src="./filter.js"></script> -->
+  <script src="./filter.js"></script>
+</html>

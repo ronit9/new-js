@@ -1,0 +1,58 @@
+<script type="text/javascript">
+  //TSRN
+
+  const greater = () => {
+    if (a > b) {
+      if (a > c) {
+        if (a > d) {
+          document.write(`<h1>${a} is big</h1>`);
+        } else {
+          document.write(`<h1>${b} is big</h1>`);
+        }
+      } else {
+        if (b > c) {
+          if (b > d) {
+            document.write(`<h1>${b} is big</h1>`);
+          } else {
+            document.write(`<h1>${d} is big</h1>`);
+          }
+        } else {
+          if (c > d) {
+            document.write(`<h1>${c} is big</h1>`);
+          } else {
+            document.write(`<h1>${d} is big</h1>`);
+          }
+        }
+      }
+    } else {
+      if (b > c) {
+        if (b > c) {
+          if (b > d) {
+            document.write(`<h1>${b} is big</h1>`);
+          } else {
+            document.write(`<h1>${d} is big</h1>`);
+          }
+        } else {
+          if (c > d) {
+            document.write(`<h1>${c} is big</h1>`);
+          } else {
+            document.write(`<h1>${d} is big</h1>`);
+          }
+        }
+      } else {
+        if (c > d) {
+          document.write(`<h1>${c} is big</h1>`);
+        } else {
+          document.write(`<h1>${d} is big</h1>`);
+        }
+      }
+    }
+  };
+
+  var a = parseInt(prompt(`enter num:-`));
+  var b = parseInt(prompt(`enter num:-`));
+  var c = parseInt(prompt(`enter num:-`));
+  var d = parseInt(prompt(`enter num:-`));
+
+  greater();
+</script>

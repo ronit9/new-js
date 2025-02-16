@@ -1,0 +1,41 @@
+<!-- 1. Write a JavaScript program to create a class called "Person" with properties for name, age and country. Include a method to display the person's details. Create two instances of the 'Person' class and display their details.
+
+output :- 
+"Person-1 Details:" 
+
+Name: xyz
+Age: 25
+Country: USA
+
+Name: pqr
+Age: 20
+Country: IND -->
+
+<script>
+  class Person {
+    constructor(Name, age, Country) {
+      this.Name = Name;
+      this.Age = age;
+      this.Country = Country;
+    }
+  }
+
+  class details extends Person {
+    constructor(Name, age, Country) {
+      super(Name, age, Country);
+    }
+    show() {
+      
+      console.log(`Name: ${this.Name}`);
+      console.log(`Age: ${this.Age}`);
+      console.log(`Country: ${this.Country}`);
+    }
+  }
+
+  let person = [new details("xyz", 25, "USA"), new details("pqr", 20, "ind")];
+
+  for (let i = 0; i < person.length; i++) {
+    console.log(`person:- ${i + 1}`);
+    person[i].show();
+  }
+</script>
