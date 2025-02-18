@@ -19,10 +19,12 @@ Account Balance: 1600 -->
     }
     transition() {
       let choice;
-      while (choice != 0) {
+      while (true) {
         choice = prompt(`enter your choice +,-  :-  `);
-        console.log(choice.length);
 
+        if (choice == 0) {
+          break;
+        }
         switch (choice) {
           case "+":
             let deposit = parseInt(prompt(`enter amount to deposit`));

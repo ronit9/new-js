@@ -1,0 +1,70 @@
+ /* CSS styles for the stopwatch */
+ .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #333;
+  }
+
+  .watch {
+    font-family: "Open Sans", sans-serif;
+    font-size: 64px;
+    font-weight: bold;
+    color: #FFC107;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: timer-blink 1s infinite alternate;
+    margin-bottom: 20px;
+    width: 350px;
+    display: flex;
+    justify-content: space-around;
+    
+  }
+ 
+
+  @keyframes timer-blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #FFC107;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+  }
+
+  button:hover {
+    background-color: #CCC;
+    color: #333;
+  }
+
+  button:disabled {
+    background-color: #CCC;
+    color: #999;
+    cursor: not-allowed;
+  }
