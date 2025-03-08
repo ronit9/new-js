@@ -1,71 +1,50 @@
-//  // registration
-//  const regdata = () => {
-//     const rusers = [];
-//     const ruser = {
-//         username: document.querySelector("#uname").value,
-//         passenter: document.querySelector("#enpass").value
+regindata = () => {
+    class enteruser {
+        const user = [];
+    constructor() {
+        // this.user = [];
+        this.user.push({
+            "ruser": document.getElementById("rname").value,
+            "rpass": document.getElementById("rpass").value
+        })
 
-//     }
+    }
+}
+class show extends enteruser {
+    constructor() {
+        super()
 
+    }
+    adddata() {
+        this.local = localStorage.setItem("user", JSON.stringify(this.user));
+    }
+}
+let r = new show();
+r.adddata();
 
-//     rusers.push(ruser);
-//     console.log(ruser);
-
-// }
+}
 
 
 const regndata = () => {
-    const rusers = [];
+    this.getdata = JSON.parse(localStorage.getItem("user"));
+    console.log(this.getdata);
 
-    const user={
-         rname: document.querySelector('#rname').value,
-         rpass: document.querySelector('#rpass').value
+    const filterdata = this.getdata.filter((val) => val.ruser == document.getElementById("lname").value && val.rpass == document.getElementById("lpass").value);
+    console.log(filterdata.length);
+
+
+    if (filterdata.length > 0) {
+        console.log('yes');
+
+    } else {
+        console.log('no');
+
     }
-   
-        
+
 }
 
 
 
-const logindata = () => {
-    class user {
-        constructor() {
-            //registration
-            this.rusers = [];
-            this.ruser = {
-                username: document.querySelector('#rname').value,
-                passenter: document.querySelector('#rpass').value
-
-            }
-
-            //login
-
-            this.username = document.querySelector('#lname').value;
-            this.accnum = document.querySelector('#laccno').value;
-            this.email = document.querySelector('#lemail').value;
-            this.pass = document.querySelector('#lpass').value;
-        }
-    }
-    //login
-    class check extends user {
-        constructor() {
-            super()
-            this.userrecord = this.rusers.filter((val) => val.name === this.username && val.accountNumber === this.accnum && val.email === this.email && val.password === this.pass);
-
-        }
-        usercheck = () => {
-            this.userrecord.length == 0 ? console.log(`❌ data is not match ❌`)
-                : console.log(`✔️ data is match ✔️`);
-
-        }
-
-    }
 
 
-    let s = new check;
-    s.rusers.push(ruser);
-    console.log(ruser);
-    s.usercheck();
-
-}
 
