@@ -1,75 +1,115 @@
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Zepto</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <style>
-        body {
-            background-color: #292524;
-            color: #aae89e;
-        }
-        header {
-            background-color: #292524;
-        }
-        .zepto-logo {
-            height: 50px;
-            width: 50px;
-        }
-        .btn-custom {
-            background-color: #299ccb;
-            color: #292524;
-        }
-        .card-body{
-            background-color: #292524;
-        }
-        .card{
-            border: 0;
-        }
+      body {
+        background-color: #292524;
+        color: #aae89e;
+      }
+      header {
+        background-color: #292524;
+      }
+      .zepto-logo {
+        height: 50px;
+        width: 50px;
+      }
+      .btn-custom {
+        background-color: #299ccb;
+        color: #292524;
+      }
+      .card-body {
+        background-color: #292524;
+      }
+      .card {
+        border: 0;
+      }
 
-        .card a{
-            background-color: #299ccb;
-            border: 0;
-        }
-        .remove{
-            display: none;
-        }
+      .card a {
+        background-color: #299ccb;
+        border: 0;
         
+      }
+
+      a{
+        text-decoration: none !important;
+      }
+      #num{
+        color: #299ccb;
+        font-weight: bold;
+        transform: translateY(-10px);
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header class="py-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-                <img src="https://storage.googleapis.com/a1aa/image/-MZnfS0yPJXdk2Bjln2q1VG0aOkw6azIQNvvHW9qOmg.jpg" alt="Zepto logo" class="zepto-logo"/>
-                <span class="h2 font-weight-bold ml-2" style="color: #aae89e;">zepto</span>
-            </div>
-            <div class="d-flex align-items-center " >
-                <a href="login.html" id="login"  class="d-flex align-items-center mr-3" style="color: #aae89e;">
-                    <i class="fas fa-user-circle fa-lg"></i>
-                    <span class="ml-1" >Login</span>
-                </a>
-                <a href="login.html" onclick="logout()"  id="logout"  class="d-flex align-items-center mr-3" style="color: #aae89e; visibility: none;">
-                    <i class="fas fa-user-circle fa-lg"></i>
-                    <span class="ml-1">log out</span>
-                </a>
-                <a href="cart.html" class="d-flex align-items-center" style="color: #aae89e;">
-                    <i class="fas fa-shopping-cart fa-lg"></i>
-                    <span class="ml-1">Cart</span>
-                </a>
-            </div>
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+          <img
+            src="https://storage.googleapis.com/a1aa/image/-MZnfS0yPJXdk2Bjln2q1VG0aOkw6azIQNvvHW9qOmg.jpg"
+            alt="Zepto logo"
+            class="zepto-logo"
+          />
+          <span class="h2 font-weight-bold ml-2" style="color: #aae89e"
+            >zepto</span
+          >
         </div>
+
+        <div class="d-flex align-items-center"  >
+          <a
+            href="login.html"
+            id="login"
+            class="d-flex align-items-center mr-3"
+            style="color: #aae89e"
+          >
+            <i class="fas fa-user-circle fa-lg"></i>
+            <span class="ml-1">Login</span>
+          </a>
+          <a
+            href="login.html"
+            onclick="logout()"
+            id="logout"
+            class="d-flex align-items-center mr-3"
+            style="color: #aae89e"
+          >
+            <i class="fas fa-user-circle fa-lg"></i>
+            <span class="ml-1">log out</span>
+          </a>
+        </div>
+        <div class="d-flex align-items-center">
+          <a
+            href="cart.html"
+            class="d-flex align-items-center"
+            style="color: #aae89e"
+          >
+            <i class="fas fa-shopping-cart fa-lg"></i>
+            <h5 id="num"></h5>
+            <span class="ml-1">Cart</span>
+          </a>
+        </div>
+      </div>
     </header>
     <main class="container py-8 px-4">
-        <div class="row" id="allcard">        
-        </div>
-        
+      <div class="row" id="allcard"></div>
     </main>
+
+    <script>
+    
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   
+    
+    <script src="watchmen.js"></script>
     <script src="product.js"></script>
-</body>
+  </body>
 </html>

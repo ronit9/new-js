@@ -64,19 +64,25 @@ const userlogin = () => {
         alert("login successfully");
         window.location.href = 'product.html';
         localStorage.setItem("loginuser", JSON.stringify(loginuser));
-        
+        if(check<=0){
+       
+            document.getElementById("login").style.visibility = "hidden";
+            document.getElementById("logout").style.visibility = "visible";
+    
+          }
     } else {
         alert("invalid email or password");
         document.getElementById('email').value = "";
         document.getElementById('password').value = "";
+        
     }
 
 }
 const logout = () => {
     localStorage.removeItem("loginuser");
-
+   
 }
-logout();
+
 
 
 
