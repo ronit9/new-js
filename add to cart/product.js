@@ -233,7 +233,8 @@ const showproduct = () => {
     })
     document.getElementById("allcard").innerHTML = card;
     let cart = JSON.parse(localStorage.getItem('carts')) || [];
-    document.getElementById("num").innerHTML = cart.length
+   document.getElementById("num").innerHTML = cart.length;
+   
 
 }
 showproduct();
@@ -248,10 +249,9 @@ const addcart = (id) => {
     }else{
        allproduct.find((val) => {
             if (val.id == id) {
-      
                 cart.push(product);
-                document.getElementById("num").innerHTML = cart.length
                 localStorage.setItem("carts", JSON.stringify(cart));
+                document.getElementById("num").innerHTML = cart.length;
                 alert("Product Added to Cart");
             }
         });

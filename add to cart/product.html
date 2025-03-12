@@ -24,8 +24,12 @@
         width: 50px;
       }
       .btn-custom {
-        background-color: #299ccb;
+        background: linear-gradient(to right, #ff416c, #ff4b2b) !important;
         color: #292524;
+      }
+      button{
+        background: linear-gradient(to right, #ff416c, #ff4b2b);
+        border: 0 transparent !important;
       }
       .card-body {
         background-color: #292524;
@@ -44,10 +48,22 @@
         text-decoration: none !important;
       }
       #num{
-        color: #299ccb;
+        color: #ff416c;
         font-weight: bold;
         transform: translateY(-10px);
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+        background-color: #ff416c;
+        color: #aae89e;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
       }
+       
+       
     </style>
   </head>
   <body>
@@ -82,14 +98,14 @@
             style="color: #aae89e"
           >
             <i class="fas fa-user-circle fa-lg"></i>
-            <span class="ml-1">log out</span>
+            <span class="ml-1">Logout</span>
           </a>
         </div>
         <div class="d-flex align-items-center">
           <a
             href="cart.html"
             class="d-flex align-items-center"
-            style="color: #aae89e"
+            style="color: #aae59e"
           >
             <i class="fas fa-shopping-cart fa-lg"></i>
             <h5 id="num"></h5>
