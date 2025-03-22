@@ -12,16 +12,14 @@
       body {
         font-family: Open Sans, sans-serif;
         background-color: #f7f7f7;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+        /* display: flex; */
+       
         background-color: #f6efcd;
       }
 
       .container {
-        max-width: 800px;
+        width: 100%;
+        /* max-width: 1140px; */
         margin: 40px auto;
         padding: 20px;
         background-color: #ffffff;
@@ -32,7 +30,7 @@
 
       h1 {
         text-align: center;
-        margin-bottom: 20px;
+        margin: 20px;
         font-size: 24px;
         font-weight: bold;
         color: #382137;
@@ -72,6 +70,7 @@
       .card {
         width: 300px;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -86,7 +85,7 @@
   </head>
   <body>
     <h1 align="center">IMDb Movie Search</h1>
-    <div class="container">
+    <div class="container bg-transparent">
       <div class="input-group">
         <input
           type="text"
@@ -95,35 +94,30 @@
         />
         <button class="btn" onclick="search()">Search</button>
       </div>
+      <div class="row " id="card"></div>
     </div>
-    <div class="row" id="card"></div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      let url = `http://www.omdbapi.com/?s=&apikey=3804c542`;
+      let url = `http://www.omdbapi.com/?i=tt3896198&apikey=3804c542`;
       fetch(url)
-        .then((movie) => movie.json())
-        .then((data) => {
-          console.log(data);
-
-          let card = "";
-
-          data.Search.forEach((val) => {
-            card += `
-             <div class="col-md-3 card ">
-    <div class="card bg-dark border-light shadow">
-        <img src="${val.Poster}" class="card-img-top" alt="Movie Poster">
-        <div class="card-body ">
-            <h5 class=" card-title text-warning">${val.Title}</h5>
-            <p class=" text-warning"><strong>year:</strong> ${val.Year}</p>
-            <p class=" text-warning"><strong>IMDB Rating:</strong> ⭐ 8.8/10</p>
-            <a href="https://www.imdb.com/title/tt1375666/" target="_blank" class="btn btn-warning btn-sm">View on IMDB</a>
+  .then((response) => response.json())
+  .then((data) => {
+    card = `
+      <div class="col-md-3 card ">
+        <div class="card bg-dark border-light shadow">
+          <img src="${data.Poster}" class="card-img-top" alt="Movie Poster">
+          <div class="card-body ">
+            <h5 class=" card-title text-warning">${data.Title}</h5>
+            <p class=" text-warning"><strong>year:</strong> ${data.Year}</p>
+            ...
+          </div>
         </div>
-    </div>
-</div>
-        `;
-          });
-          document.getElementById("card").innerHTML = card;
-        });
+      </div>
+    `;
+    document.getElementById("card").innerHTML = card;
+  })
+  .catch((error) => console.error("Error fetching data:", error));
       const search = () => {
         let name = document.getElementById("name").value;
         let url = `http://www.omdbapi.com/?s=${name}&apikey=3804c542`;
@@ -137,8 +131,8 @@
 
             data.Search.forEach((val) => {
               card += `
-                     <div class="col-md-4">
-            <div class="card bg-dark border-light shadow">
+                     <div class="card col-md-1">
+            <div class=" bg-dark border-light shadow">
                 <img src="${val.Poster}" class="card-img-top" alt="Movie Poster">
                 <div class="card-body">
                     <h5 class="card-title text-warning">${val.Title}</h5>
