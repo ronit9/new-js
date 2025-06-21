@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- delete element in arry position wise -->
 
 <script type="text/javascript">
@@ -21,3 +22,28 @@
   console.log(arr);
   console.log("deleted element is " + ans);
 </script>
+=======
+<!-- delete element in arry position wise -->
+
+<script type="text/javascript">
+  let size = parseInt(prompt("enter size of array"));
+
+  let arr = new Array(size);
+  console.log(arr);
+
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = parseInt(prompt("enter element"));
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+
+  let pos = parseInt(prompt("enter position"));
+  // in this pos is the numberv of position to delete value // 1 is the number of element to be deleted //
+  ans = arr.splice(pos, 1);
+
+  console.log(arr);
+  console.log("deleted element is " + ans);
+</script>
+>>>>>>> b5ab32c90e072b6108a1221fca16b829db54541d

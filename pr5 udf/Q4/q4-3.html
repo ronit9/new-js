@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script type="text/javascript">
   //TSRS
   var a = prompt("Enter first number");
@@ -28,3 +29,35 @@
 
   document.write(`<h1>division =${division(a, b)}</h1>`);
 </script>
+=======
+<script type="text/javascript">
+  //TSRS
+  var a = prompt("Enter first number");
+  var b = prompt("Enter first number");
+  const sum = (a, b) => {
+    var sum = parseInt(a) + parseInt(b);
+    return sum;
+  };
+  document.write(`<h1>addition= ${sum(a, b)}</h1>`);
+
+  const sub = (a, b) => {
+    var sub = parseInt(a) - parseInt(b);
+    return sub;
+  };
+  document.write(`<h1>subtraction =${sub(a, b)}</h1>`);
+
+  const multiplication = (a, b) => {
+    var mul = parseInt(a) * parseInt(b);
+    return mul;
+  };
+
+  document.write(`<h1>multiplication =${multiplication(a, b)}</h1>`);
+
+  const division = (a, b) => {
+    var div = parseFloat(a) / parseFloat(b);
+    return div;
+  };
+
+  document.write(`<h1>division =${division(a, b)}</h1>`);
+</script>
+>>>>>>> b5ab32c90e072b6108a1221fca16b829db54541d

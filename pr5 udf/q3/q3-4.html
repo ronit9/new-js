@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script type="text/javascript">
   //TNRS
 
@@ -20,3 +21,27 @@
 
   document.write(big(a, b, c, d));
 </script>
+=======
+<script type="text/javascript">
+  //TNRS
+
+  const big = (a, b, c, d) => {
+    if (a > b && a > c && a > d) {
+      return `<h1>${a} is big</h1>`;
+    } else if (b > c && b > a && b > d) {
+      return `<h1>${b} is big</h1>`;
+    } else if (c > d) {
+      return `<h1>${c} is big</h1>`;
+    } else {
+      return `<h1>${d} is big</h1>`;
+    }
+  };
+
+  var a = parseInt(prompt(`enter num:-`));
+  var b = parseInt(prompt(`enter num:-`));
+  var c = parseInt(prompt(`enter num:-`));
+  var d = parseInt(prompt(`enter num:-`));
+
+  document.write(big(a, b, c, d));
+</script>
+>>>>>>> b5ab32c90e072b6108a1221fca16b829db54541d

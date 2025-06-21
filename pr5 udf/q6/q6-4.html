@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script type="text/javascript">
   //TNRS
 
@@ -31,3 +32,38 @@
   };
   calc();
 </script>
+=======
+<script type="text/javascript">
+  //TNRS
+
+  const calc = () => {
+    var a = parseInt(prompt("Enter  number"));
+    var b = parseInt(prompt("Enter  number"));
+    var choice = prompt(`enter your choice +,-,*,/`);
+
+    switch (choice) {
+      case "+":
+        var ans = a + b;
+        document.write(`<h1>${ans}</h1>`);
+        break;
+
+      case "-":
+        var ans = a - b;
+        document.write(`<h1>${ans}</h1>`);
+        break;
+
+      case "*":
+        var ans = a * b;
+        document.write(`<h1>${ans}</h1>`);
+        break;
+
+      case "/":
+        var ans = a / b;
+        document.write(`<h1>${ans}</h1>`);
+        break;
+    }
+    return ans;
+  };
+  calc();
+</script>
+>>>>>>> b5ab32c90e072b6108a1221fca16b829db54541d

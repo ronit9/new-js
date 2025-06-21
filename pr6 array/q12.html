@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- remove duplicate element in array -->
 <script type="text/javascript">
   let size = parseInt(prompt("enter size of array"));
@@ -15,3 +16,22 @@
   });
   console.log(del);
 </script>
+=======
+<!-- remove duplicate element in array -->
+<script type="text/javascript">
+  let size = parseInt(prompt("enter size of array"));
+  let arr = new Array(size);
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = parseInt(prompt("enter element"));
+  }
+  console.log(arr);
+  let del = [];
+  arr.filter((a, b) => {
+    if (a == b) {
+      del.push(a);
+      return del;
+    }
+  });
+  console.log(del);
+</script>
+>>>>>>> b5ab32c90e072b6108a1221fca16b829db54541d

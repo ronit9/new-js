@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- find duplicate element in array. -->
 
 <script type="text/javascript">
@@ -13,3 +14,20 @@
 
   console.log(dup);
 </script>
+=======
+<!-- find duplicate element in array. -->
+
+<script type="text/javascript">
+  let arr = [2, 2, 3, 4, 5, 5];
+  let dup = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] == arr[j]) {
+        dup.push(arr[i]); // using .push method to store duplicate element
+      }
+    }
+  }
+
+  console.log(dup);
+</script>
+>>>>>>> b5ab32c90e072b6108a1221fca16b829db54541d
