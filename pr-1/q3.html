@@ -1,0 +1,12 @@
+<h1 id="temperature"></h1>
+
+<!-- Write a javascript program to convert temperature from degree Celsius to Fahrenheit.(compulsory user input)
+formula : c * 9/5 + 32 -->
+
+<script>
+  let c = parseInt(prompt("enter temperature in celsius"));
+  let f = (c * 9) / 5 + 32;
+  document.getElementById(
+    "temperature"
+  ).innerHTML = `${c} degree celsius = ${f} degree fahrenheit`;
+</script>

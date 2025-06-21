@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  
+  margin: 0 auto;
+  
+}
+
+
+.body{
+    background-color: #3a4454;
+    height: 350px;
+}
+.screen input{
+    height: 70px;
+    background-color: #343e4e;
+    box-shadow: -4px -2px 4px 3px #424d5c,4px 2px 4px -1px #2d3945;
+}
+button{
+    background-color: #3a4454;
+    height: 35px;
+    border-radius: 30px;
+    box-shadow: -4px -2px 4px 3px #424d5c,4px 2px 4px -1px #2d3945;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="reginster" align="center">
+      <h1>register</h1>
+      <form>
+        <label> username:-</label>
+        <input type="text" placeholder="enter username" id="rname" />
+        <br />
+        <label>password:-</label>
+        <input type="password" placeholder="enter password" id="rpass" />
+        <button type="button" value="button" onclick="regindata()">
+          reginster
+        </button>
+      </form>
+    </div>
+
+     <!-- login -->
+     <div class="login" align="center">
+      <h1>login page</h1>
+        <label>NAME:-</label>
+        <input type="text" placeholder="enter your name" id="lname" />
+      
+        <input type="text" placeholder="enter your password" id="lpass" />
+        
+          <button type="button" onclick="regndata()" value="submit">
+            login
+          </button>
+    <!-- <script src="login.js"></script> -->
+    <script>
+       
+       const users  = [];
+
+        const regindata = () => {
+            let name = document.getElementById('rname').value;
+            let password = document.getElementById('rpass').value;
+
+            users.push({
+                userName : name,
+                userPass : password,
+            })
+
+            console.log(users);
+        }
+        
+
+
+    
+        const regndata = () => {
+            let name = document.getElementById('lname').value;
+            let password = document.getElementById('lpass').value;
+
+           
+            let login = users.find(val => val.userName == name && val.userPass == password);
+            if(login){
+                alert("Login Done");
+                location.href="success.html"
+            }else{
+                alert("err");
+            }
+
+            // for (const e of users) {
+
+            //     console.log(e.userName ,e.userPass);
+                
+            //    if(e.userName == name && e.userPass == password) {
+            //     alert("Login Done");
+            //     break;
+            //    }else {
+            //     alert("Error !!!");
+            //     }
+            // }
+
+            
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<h1 id="swapping"></h1>
+
+<!-- Write a javascript Program to perform a swapping of two variables.(compulsory user input) -->
+
+<script>
+  let a = parseInt(prompt("enter first number"));
+  let b = parseInt(prompt("enter second number"));
+
+  a = a + b;
+  b = a - b;
+  a = a - b;
+
+  document.getElementById("swapping").innerHTML = `a=${a}<br>b=${b}`;
+</script>

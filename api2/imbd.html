@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>imbd</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Open Sans, sans-serif;
+        background-color: #f7f7f7;
+        /* display: flex; */
+       
+        background-color: #f6efcd;
+      }
+
+      .container {
+        width: 100%;
+        /* max-width: 1140px; */
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        margin: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #382137;
+      }
+
+      .input-group {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .input-group input {
+        width: 80%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px 0 0 5px;
+      }
+
+      .input-group button {
+        width: 20%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #03a9f4;
+        color: #ffffff;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+      }
+
+      .input-group button:hover {
+        background-color: #007bff;
+      }
+      .card {
+        width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">IMDb Movie Search</h1>
+    <div class="container bg-transparent">
+      <div class="input-group">
+        <input
+          type="text"
+          id="name"
+          placeholder="Search for a movie title, actor, or director"
+        />
+        <button class="btn" onclick="search()">Search</button>
+      </div>
+      <div class="row " id="card"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let url = `http://www.omdbapi.com/?i=tt3896198&apikey=3804c542`;
+      fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    card = `
+      <div class="col-md-3 card ">
+        <div class="card bg-dark border-light shadow">
+          <img src="${data.Poster}" class="card-img-top" alt="Movie Poster">
+          <div class="card-body ">
+            <h5 class=" card-title text-warning">${data.Title}</h5>
+            <p class=" text-warning"><strong>year:</strong> ${data.Year}</p>
+            ...
+          </div>
+        </div>
+      </div>
+    `;
+    document.getElementById("card").innerHTML = card;
+  })
+  .catch((error) => console.error("Error fetching data:", error));
+      const search = () => {
+        let name = document.getElementById("name").value;
+        let url = `http://www.omdbapi.com/?s=${name}&apikey=3804c542`;
+
+        fetch(url)
+          .then((movie) => movie.json())
+          .then((data) => {
+            console.log(data);
+
+            let card = "";
+
+            data.Search.forEach((val) => {
+              card += `
+                     <div class="card col-md-1">
+            <div class=" bg-dark border-light shadow">
+                <img src="${val.Poster}" class="card-img-top" alt="Movie Poster">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">${val.Title}</h5>
+                    <p class="text-warning"><strong>year:</strong> ${val.Year}</p>
+                    <p class="text-warning"><strong>IMDB Rating:</strong> ⭐ 8.8/10</p>
+                    <a href="https://www.imdb.com/title/tt1375666/" target="_blank" class="btn btn-warning btn-sm">View on IMDB</a>
+                </div>
+            </div>
+        </div>
+                `;
+            });
+            document.getElementById("card").innerHTML = card;
+          });
+      };
+    </script>
+  </body>
+</html>

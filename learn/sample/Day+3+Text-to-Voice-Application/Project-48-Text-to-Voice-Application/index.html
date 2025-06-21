@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Voice</title>
+</head>
+
+<style>
+    select{
+        width: 200px;
+    }
+</style>
+<body>
+    <h1>Text to Voice</h1>
+    <textarea  id="msg" placeholder="Enter your text....."></textarea>
+    <label for="langSelect">select your voice</label>
+    <select  id="langSelect"></select>
+
+    <button onclick="speak()">speak </button>
+    <button onclick="stop()">stop</button>
+    
+</body>
+
+<script>
+    let voices=[];
+
+    const voiceSelect=()=>{
+        voices=speechSynthesis.getVoices();
+
+        if(voices.length===0){
+            setTimeout(voiceSelect,100);
+            return;
+        }
+        let vo=[];
+        voices.forEach((v)=>{
+            vo.push(`<option value="${v.lang}">${v.name}(${v.lang})</option>`)
+        })
+        document.getElementById("langSelect").innerHTML=vo;
+    }
+
+    voiceSelect();
+
+    speechSynthesis.onvoiceschanged=voiceSelect;
+
+    const speak=()=>{
+        let msg=document.getElementById("msg").value;
+        let VoiceName=document.getElementById("langSelect").value;
+        let convert= new SpeechSynthesisUtterance(msg)
+
+        const selectedVoiceName= voices.find((voice)=>voice.lang===VoiceName); 
+        console.log(selectedVoiceName);
+        if(selectedVoiceName){
+            convert.voice=selectedVoiceName;
+        }
+
+        convert.volume=1;
+        convert.rate=1;
+        convert.pitch=1;
+        
+        speechSynthesis.cancel();
+        speechSynthesis.speak(convert);
+        
+    }
+
+    const stop=()=>{
+        if(speak){
+            speechSynthesis.cancel();
+        }
+    }
+</script>
+</html>

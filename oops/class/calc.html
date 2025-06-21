@@ -1,0 +1,44 @@
+<script>
+  class calc {
+    constructor() {
+      this.a = parseInt(prompt("enter the value for a:-"));
+      console.log(`value of ais:-${this.a}`);
+      this.b = parseInt(prompt("enter the value for:-"));
+      console.log(`value of ais:-${this.b}`);
+    }
+  }
+
+  class select extends calc {
+    constructor() {
+      super();
+    }
+
+    enterChoice() {
+      let Choice = prompt("Enter the choice +,-,*,/");
+      if (Choice == "+") {
+        return this.a + this.b;
+      } else if (Choice == "-") {
+        return this.a - this.b;
+      } else if (Choice == "*") {
+        return this.a * this.b;
+      } else if (Choice == "/") {
+        return this.a / this.b;
+      } else {
+        return "invalid choice";
+      }
+    }
+  }
+
+  class ans extends select {
+    constructor(name) {
+      super();
+    }
+    ans() {
+      let result = this.enterChoice();
+      console.log(`here is your result:=${result}`);
+    }
+  }
+  
+  let cal = new ans();
+  cal.ans();
+</script>

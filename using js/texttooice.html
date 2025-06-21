@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>try</title>
+  </head>
+  <body>
+    <h1>text to voice</h1>
+    <textarea id="msg" placeholder="enter your text..."></textarea>
+    <label>slelect your voice</label>
+    <select id="langSelect"></select>
+    <button onclick="speak()">speak</button>
+    <button id="pause">pause</button>
+    <button id="resume">resume</button>
+    <button onclick="stop()">stop</button>
+  </body>
+
+  <script>
+    let voices = [];
+    const selectVoice = () => {
+      voices = speechSynthesis.getVoices();
+      if (voices.length === 0) {
+        setTimeout(selectVoice, 100);
+      }
+      let allvoice = [];
+      voices.forEach((v) => {
+        allvoice.push(
+          `<option value="${v.lang}">${v.name}(${v.lang})</option>`
+        );
+        document.getElementById("langSelect").innerHTML = allvoice;
+      });
+    };
+    selectVoice();
+
+    speechSynthesis.onvoiceschanged = selectVoice;
+
+    const speak = () => {
+      let msg = document.getElementById("msg").value;
+      let VoiceName = document.getElementById("langSelect").value;
+      let convert = new SpeechSynthesisUtterance(msg);
+
+      const selectedVoiceName = voices.find(
+        (voice) => voice.lang === VoiceName
+      );
+      if (selectedVoiceName) {
+        convert.voice = selectedVoiceName;
+      }
+      convert.volume = 1;
+      convert.rate = 1;
+      convert.pitch = 1;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(convert);
+    };
+    const stop = () => {
+      if (speak) {
+        speechSynthesis.cancel();
+      }
+    };
+
+    const pasue = () => {
+      speechSynthesis.pause();
+      document.getElementById("pause").style.display = "none";
+      document.getElementById("resume").style.display = "block";
+    };
+
+    const resume = () => {
+      speechSynthesis.resume();
+      document.getElementById("pause").style.display = "block";
+      document.getElementById("resume").style.display = "none";
+    };
+
+    document.getElementById("pause").addEventListener("click", pasue);
+    document.getElementById("resume").addEventListener("click", resume);
+  </script>
+</html>

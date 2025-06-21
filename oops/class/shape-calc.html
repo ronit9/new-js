@@ -1,0 +1,55 @@
+<script>
+  class shape {
+    constructor(name) {
+      this.shape = name;
+      
+    }
+  }
+
+  class count extends shape {
+    constructor() {
+      super(name);
+    }
+    enterChoice() {
+      if (this.shape == "circle") {
+        console.log("circle");
+        let radius = parseInt(prompt(`enter cicle radious:-`));
+        
+        return 3.14 * radius * radius;;
+      } else if (this.shape == "square") {
+        console.log("square");
+        let side = parseInt(prompt(`enter square side:-`));
+        return side * side;
+      } else if (this.shape == "rectangle") {
+        console.log("rectangle");
+        let l = parseInt(prompt(`enter length:-`));
+        let b = parseInt(prompt(`enter breadth:-`));
+        return l * b;
+      } else if (this.shape == "triangle") {
+        console.log("triangle");
+        let b = parseInt(prompt(`enter base:-`));
+        let h = parseInt(prompt(`enter height:-`));
+        return 0.5 * b * h;
+      } else {
+        return ` enter valid choice`;
+      }
+    }
+  }
+
+  class ans extends count {
+    constructor() {
+      super();
+    }
+    ans() {
+      let result = this.enterChoice();
+      if (typeof result === "number") {
+        console.log(`here's your answer: ${result}`);
+      } else {
+        console.log(result);
+      }
+    }
+  }
+  let name = prompt("Enter shape name:");
+  let sHape = new ans(name);
+  sHape.ans();
+</script>
